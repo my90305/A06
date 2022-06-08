@@ -1,5 +1,3 @@
-import React from 'react';
-
 
 
 const ChangeArduinoYoutube=()=> {
@@ -15,7 +13,7 @@ const ChangeCameraScreen=()=> {
 
 
 
-function Camera() {
+export default function Camera() {
     
 
     return(
@@ -32,4 +30,3 @@ function Camera() {
     );
 } 
 
-export default Camera;
