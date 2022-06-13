@@ -11,9 +11,6 @@ export default function Sidebar() {
       <Link href="/elevator">
         <a>電梯控制</a>
       </Link>
-      <Link href="/contact">
-        <a>Contact</a>
-      </Link>
     </nav>
   )
 }
