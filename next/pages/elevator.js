@@ -6,7 +6,8 @@ export default function Elevator() {
   return (
     <section>
       <h2>電梯控制</h2>
-      <ElevatorController />
+      
+      <ElevatorController/>
     </section>
   )
 }
