@@ -22,5 +22,5 @@ export const RFID =[
     {
         id: '6',
         cardNumber: '211124224145',
-    },
+    },   
 ]
