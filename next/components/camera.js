@@ -1,5 +1,3 @@
-
-
 const ChangeArduinoYoutube=()=> {
     document.getElementById("Screen1").src="https://www.youtube.com/embed/N4r9tQGmAaY";
     document.getElementById("Screen2").src="https://www.youtube.com/embed/aDKadRU3T80";
