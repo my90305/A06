@@ -25,9 +25,10 @@ export default function handler (req, res){
                     res.status(201).json({response:'Correct!'}) }
                 else 
                     res.status(200).json({response:'Not this Card'})
-                    default:
-                        res.status(201).json({response:'error!'}) 
+            default:
+                    res.status(201).json({response:'error!'}) 
 
         }
     }
+    else res.status(404).json({404:'error'})
 }
