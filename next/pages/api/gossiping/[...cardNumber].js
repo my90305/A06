@@ -3,8 +3,6 @@ import { RFID } from '../../../data/RFIDdata'
 export default function handler (req, res){
     const cardNumber = req.query.cardNumber
     console.log(cardNumber)
-    //res.status(200).json(cardNumber)
-    console.log(RFID.cardNumber)
     
     if (cardNumber.length === 2) {
         switch (cardNumber[0]){
