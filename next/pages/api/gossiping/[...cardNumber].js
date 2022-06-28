@@ -1,9 +1,9 @@
 import { RFID } from '../../../data/RFIDdata'
-import { allCorrect } from '../gossiping/index'
+import getBoxESP8266, { allCorrect } from '../gossiping/index'
 
 let checkArray = [false, false, false]
 
-export default function handler (req, res, {visitedCnt}){
+export default function handler (req, res){
     const cardNumber = req.query.cardNumber
     console.log(cardNumber,'began to check===============================================>')
     
@@ -40,20 +40,7 @@ export default function handler (req, res, {visitedCnt}){
     }
     else res.status(404).json({四零四:'錯誤'})
 
-    if ({ visitedCnt } === 3) {
-        allCorrect();
+    if (checkArray[1] && checkArray[2] && checkArray[3]) {
+        getBoxESP8266();
     }
-}
-
-let cnt = 0;
-export function incrementAndGet() {
-  cnt++;
-  return cnt;
-}
-export async function getServerSideProps(context) {
-    const visitedCnt = incrementAndGet();
-    console.log('Home getServerSideProps', { visitedCnt });
-    return {
-      props: { visitedCnt }, // will be passed to the page component as props
-    };
 }

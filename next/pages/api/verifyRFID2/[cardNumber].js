@@ -16,7 +16,7 @@ function handler (req, res) {
         else {
             i = 0
             array = [false, false, false]
-            res.stutas(404).json({respon: 'Card Oder Error'})
+            res.stutas(200).json({respon: 'Card Oder Error'})
         }
     }
 

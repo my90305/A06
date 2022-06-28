@@ -1,21 +1,17 @@
-import { checkArray } from '../../../pages/api/gossiping/[...cardNumber]'
-
-const apiRouter = '192.168.0.101';
+const apiRouter = '192.168.0.1';
 const host = '80';
-const apiPrefix = `http://${apiRouter}/`;
+const apiPrefix = `http://${apiRouter}:${host}`;
 
-export async function getBoxESP8266() {
-    const response = await fetch(`${apiPrefix}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'text/json',
-      },
-    });
-    return response.json();
+const getBoxESP8266 = async () => {
+  const response = await fetch(`${apiPrefix}`, {
+    method: 'GET',
+  })
+  console.log(response)
 }
 
-export default function allCorrect (req, res) {
-    if (checkArray[0] && checkArray[1] && checkArray[2]) {
-        getBoxESP8266()
-    } 
+export function handler (req, res) {
+  getBoxESP8266()
+  res.status(200).json({response: 'check API'})
 }
+
+export default handler
