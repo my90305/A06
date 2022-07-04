@@ -7,9 +7,10 @@ export default function Sidebar() {
     
     <nav className={styles.nav}>
       <center>
-        <img src="/TaiChi(1).png"
+        <img src="/TaiChi.png"
           width="100 px"
-          height="100 px"/>
+          height="100 px"
+          className={styles.rotate}/>
       </center>
       <Link href="/">
         <a>監控畫面</a>
