@@ -63,6 +63,8 @@ void loop() {
       if(tag == "163157131167")
       {
         Serial.println("correct");
+        //回復
+        client.println("HTTP/1.1 200 OK");
         serverName = serverName + tag ;
         digitalWrite(D8, HIGH);
         delay(100);
@@ -79,6 +81,7 @@ void loop() {
       }
       else{
         Serial.println("error");
+        client.println("HTTP/1.1 404 Not Found");
         serverName = serverName + tag;
         digitalWrite(D8, HIGH);
         delay(2000);
