@@ -1,5 +1,5 @@
 import { RFID } from '../../../data/RFIDdata'
-import getBoxESP8266, { allCorrect } from '../gossiping/index'
+import { getBoxESP8266 } from '../gossiping/index'
 
 let checkArray = [false, false, false]
 
@@ -10,7 +10,7 @@ export default function handler (req, res){
     if (cardNumber.length === 2) {
         switch (cardNumber[0]){
             case '1':
-                if (cardNumber[1] === RFID[0].cardNumber) { 
+                if (cardNumber[1] === RFID[3].cardNumber) { 
                     res.status(201).json({response:'Correct!'}) 
                     checkArray[0] = true
                 }
@@ -18,7 +18,7 @@ export default function handler (req, res){
                     res.status(200).json({response:'Not this Card'})
 
             case '2':
-                if (cardNumber[1] === RFID[1].cardNumber) { 
+                if (cardNumber[1] === RFID[4].cardNumber) { 
                     res.status(201).json({response:'Correct!'})
                     checkArray[1] = true
                 }
@@ -26,7 +26,7 @@ export default function handler (req, res){
                     res.status(200).json({response:'Not this Card'})
 
             case '3': 
-                if (cardNumber[1] === RFID[2].cardNumber) { 
+                if (cardNumber[1] === RFID[5].cardNumber) { 
                     res.status(201).json({response:'Correct!'}) 
                     checkArray[2] = true
                 }
