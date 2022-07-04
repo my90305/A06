@@ -1,3 +1,3 @@
-export default function handler (req, res) {
-    res.status(200).json({name: 'Home API router'})
+export default function ApiRouterHome (req, res) {
+  res.status(200).json({API_Router_Home: 'ok'})
 }
