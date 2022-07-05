@@ -15,7 +15,7 @@ const char* ssid = "8250122";
 const char* password = "00001111";
 
 //Your Domain name with URL path or IP address with path
-String serverName = "http://192.168.0.105:3000/api/gossiping/1/";
+String serverName = "http://192.168.137.1:3000/api/gossiping/1/";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -63,8 +63,6 @@ void loop() {
       if(tag == "163157131167")
       {
         Serial.println("correct");
-        //回復
-        client.println("HTTP/1.1 200 OK");
         serverName = serverName + tag ;
         digitalWrite(D8, HIGH);
         delay(100);
@@ -81,7 +79,6 @@ void loop() {
       }
       else{
         Serial.println("error");
-        client.println("HTTP/1.1 404 Not Found");
         serverName = serverName + tag;
         digitalWrite(D8, HIGH);
         delay(2000);

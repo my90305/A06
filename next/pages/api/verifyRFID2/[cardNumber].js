@@ -1,33 +1,33 @@
 import RFID from '../../../data/RFIDdata'
 
-let array = [false, false, false]
+const apiRouter = '192.168.0.1';
+const host = '80';
+const apiPrefix = `http://${apiRouter}:${host}`;
+let counst = 0
 
-function handler (req, res) {
+export function handler (req, res) {
     const cardNumber = req.query.cardNumber
     console.log(cardNumber)
-    let i = 0;
-    
-    while (!array[2]) {
-        
-        if (cardNumber === RFID[i+3]) {
-            array[i] = true
-            i++
-        }
-        else {
-            i = 0
-            array = [false, false, false]
-            res.stutas(200).json({respon: 'Card Oder Error'})
+    console.log(counst)
+
+    if (cardNumber === RFID[counst].cardNumber) {
+        res.stutas(200).json({response: 'correct'})
+        counst++
+        if (counst === 2) {
+            allCorrectRes()
         }
     }
+    else {
+        counst = 0
+        res.stutas(200).json({response: 'error'})
+    }
 
-    return array[0]&&array[1]&&array[2]
-}
 
-
-function allCorrectRes (req, res) {
-    while(handler()) {
-        res.stutas(200).json({respon: 'ALL Clear'})
+    const allCorrectRes = async () => {
+        const response = await fetch(`${apiPrefix}`, {
+            method: 'GET',
+        })
     }
 }
 
-export default allCorrectRes
+export default handler
