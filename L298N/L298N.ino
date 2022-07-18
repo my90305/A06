@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 
-const char* ssid = "好了啦文書機"; // 設定欲連接無線網路名稱
+const char* ssid = "8250122"; // 設定欲連接無線網路名稱
 const char* password = "00001111"; // 設定欲連接無線網路密碼
 
 int ENB = 15;
