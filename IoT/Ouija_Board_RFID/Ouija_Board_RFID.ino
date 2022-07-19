@@ -14,7 +14,7 @@ String tag;
 const char* ssid = "8250122";
 const char* password = "00001111";
 
-//Your Domain name with URL path or IP address with path
+//URL路徑或IP位置
 String serverName = "http://192.168.137.1:3000/api/gossiping/1/";
 
 // the following variables are unsigned longs because the time, measured in
