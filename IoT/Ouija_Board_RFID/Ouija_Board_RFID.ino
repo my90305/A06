@@ -3,6 +3,8 @@
 #include <WiFiClient.h>
 #include <SPI.h>
 #include <MFRC522.h>
+#include "LED_HIGH.h"
+#include "LED_LOW.h"
 
 constexpr uint8_t RST_PIN = D3;
 constexpr uint8_t SS_PIN = D4;
@@ -16,6 +18,7 @@ const char* password = "00001111";
 
 //URL路徑或IP位置
 String serverName = "http://192.168.137.1:3000/api/gossiping/1/";
+//待更新通靈版位置
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -64,25 +67,12 @@ void loop() {
       {
         Serial.println("correct");
         serverName = serverName + tag ;
-        digitalWrite(D8, HIGH);
-        delay(100);
-        digitalWrite(D8, LOW);
-        delay(100);
-        digitalWrite(D8, HIGH);
-        delay(100);
-        digitalWrite(D8, LOW);
-        delay(100);
-        digitalWrite(D8, HIGH);
-        delay(100);
-        digitalWrite(D8, LOW);
-        delay(100);
+        LED_High();
       }
       else{
         Serial.println("error");
         serverName = serverName + tag;
-        digitalWrite(D8, HIGH);
-        delay(2000);
-        digitalWrite(D8, LOW);
+        LED_Low();
       }
       String serverPath = serverName ;
       serverName=serverName+ "/";
