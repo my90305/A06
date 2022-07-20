@@ -3,6 +3,8 @@
 #include <WiFiClient.h>
 #include <SPI.h>
 #include <MFRC522.h>
+#include "LED_HIGH.h"
+#include "LED_LOW.h"
 
 constexpr uint8_t RST_PIN = D3;
 constexpr uint8_t SS_PIN = D4;
@@ -64,25 +66,12 @@ void loop() {
       {
         Serial.println("correct");
         serverName = serverName + tag ;
-        digitalWrite(D8, HIGH);
-        delay(100);
-        digitalWrite(D8, LOW);
-        delay(100);
-        digitalWrite(D8, HIGH);
-        delay(100);
-        digitalWrite(D8, LOW);
-        delay(100);
-        digitalWrite(D8, HIGH);
-        delay(100);
-        digitalWrite(D8, LOW);
-        delay(100);
+        LED_High();
       }
       else{
         Serial.println("error");
         serverName = serverName + tag;
-        digitalWrite(D8, HIGH);
-        delay(2000);
-        digitalWrite(D8, LOW);
+        LED_Low();
       }
       String serverPath = serverName ;
       serverName=serverName+ "/";
