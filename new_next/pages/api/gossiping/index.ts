@@ -11,7 +11,7 @@ export async function getBoxESP8266 () {
 
 export function handler (req: NextApiRequest, res: NextApiResponse) {
   getBoxESP8266()
-  res.status(200).json({response: 'check API'})
+  res.status(200).json({response: 'Gossiping Check API'})
 }
 
 export default handler
