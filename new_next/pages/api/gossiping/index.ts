@@ -1,8 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const apiRouter = '192.168.137.240';
-const host = '80';
-const apiPrefix = `http://${apiRouter}:${host}`;
+const apiPrefix = `http://${process.env.GOSSIPING_BOX_IP}:${process.env.GOSSIPING_BOX_HOST}`;
 
 export async function getBoxESP8266 () {
   const response = await fetch(`${apiPrefix}`, {
@@ -13,7 +11,7 @@ export async function getBoxESP8266 () {
 
 export function handler (req: NextApiRequest, res: NextApiResponse) {
   getBoxESP8266()
-  res.status(200).json({response: 'check API'})
+  res.status(200).json({response: 'Gossiping Check API'})
 }
 
 export default handler
