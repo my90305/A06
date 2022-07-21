@@ -63,7 +63,7 @@ void loop() {
   Serial.println(request);
   client.flush();
  
-  // 依照請求去做連接
+  // 依照請求去連接
   int value = 1;
   if (request.indexOf("/MOTOR=FRONT") != -1)  
   {
@@ -97,7 +97,7 @@ void loop() {
   //回復
   client.println("HTTP/1.1 200 OK");
   client.println("Content-Type: text/html");
-  client.println(""); //  this is a must
+  client.println(""); //誤刪除必要的
   client.println("<!DOCTYPE HTML>");
   client.println("<html>");
   client.println("<head><title>ESP8266 MOTOR Control</title></head>");

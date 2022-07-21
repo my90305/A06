@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { getBoxESP8266 } from '../../../gossiping/index'
 
 const CORRECT_LIST = [
   { id: 0, sensorId: '0', tagId: '163157131167' },
@@ -22,7 +23,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       checkedArray[item.id] = true;
       if (isAllChecked()) {
         console.log('yeeee');
-        //  getBoxESP8266();
+        getBoxESP8266();
       }
       return res.status(201).json({ success: 'true', sensorId, tagId, checkedArray, isAllChecked: isAllChecked() })
     }
