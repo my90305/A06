@@ -4,7 +4,6 @@ import Image from "next/image";
 
 export default function Sidebar() {
   return (
-    
     <nav className={styles.nav}>
         
         <img src="/TaiChi.png"

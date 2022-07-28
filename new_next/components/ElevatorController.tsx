@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import styles from './elevatorController.module.css'
 
+const apiDoor = 'http://${process.env.DOOR_IP}';
+
 enum VIDEOS_TYPE {
   ESP32_LIVE,
 }
@@ -17,28 +19,31 @@ enum DOOR_TYPE {
   DOOR_CLOSE,
 }
 
-const doorList = {
-  doorOpenSrc: [
-    `http://${process.env.DOOR_IP}/RELAY=OFF`],
-  doorCloseSrc: [
-    `http://${process.env.DOOR_IP}/RELAY=OFF`
-  ]
+export async function DoorControllOpen(){
+  const response = await fetch(`${apiDoor}/RELAY=ON`,{
+    method: 'GET',
+  })
+}
+
+export async function DoorControllClose(){
+  const response = await fetch(`${apiDoor}/RELAY=OFF`,{
+    method: 'GET',
+  })
 }
 
 export default function ElevatorController() {
   const [videoType, setVideoType] = useState(VIDEOS_TYPE. ESP32_LIVE);
   const [screenListSrc, setScreenSrc] = useState(screenList.esp32LiveSrc);
   const [doorType, setDoorType] = useState(DOOR_TYPE. DOOR_CLOSE);
-  const [doorListSrc, setDoorSrc] = useState(doorList.doorCloseSrc);
 
   useEffect(() => {
     switch (doorType) {
       case DOOR_TYPE.DOOR_OPEN:
       default:
-        setDoorSrc(doorList.doorOpenSrc)
+        DoorControllOpen();
         break;
       case DOOR_TYPE.DOOR_CLOSE:
-        setDoorSrc(doorList.doorCloseSrc)
+        DoorControllClose();
         break;
     }
   }, [doorType]);
@@ -49,11 +54,7 @@ export default function ElevatorController() {
         <iframe key={src} title={videoType.toString()} width="560" height="315"
           src={src} frameBorder="0" allowFullScreen />
       )}
-      {doorListSrc.map(src =>
-        <iframe key={src} title={doorType.toString()} width="0" height="0"
-          src={src} frameBorder="0" allowFullScreen />
-      )}
-
+      
       <br />
       
       <button className={styles.button}

@@ -7,21 +7,14 @@ import type { NextPage } from 'next'
 
 const Elevator: NextPageWithLayout = () => {
   return (
-    <section>
-      <h2>電梯控制</h2>
-
-      <ElevatorController />
-    </section>
+    <Layout>
+      <Sidebar/>
+      <section>
+        <h2>電梯控制</h2>
+        <ElevatorController />
+      </section>
+    </Layout>
   )
 }
 
 export default Elevator
-
-Elevator.getLayout = function getLayout(page: ReactElement) {
-    return (
-      <Layout>
-        <Sidebar/>
-        {page}
-      </Layout>
-    )
-  }

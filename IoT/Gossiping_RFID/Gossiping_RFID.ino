@@ -13,6 +13,8 @@ MFRC522::MIFARE_Key key;
 String tag1;
 String tag;
 
+int count = 1;
+
 const char* ssid = "yydn";
 const char* password = "00001111";
 
@@ -63,6 +65,10 @@ void loop() {
     if(WiFi.status()== WL_CONNECTED){
       WiFiClient client;
       HTTPClient http;
+      if(count == 2)
+      {
+        serverName = "http://192.168.137.1:3000/api/gossiping/1/";
+      }
       if(tag1 == "163157131167")
       {
         Serial.println("correct");
