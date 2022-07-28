@@ -13,12 +13,14 @@ MFRC522::MIFARE_Key key;
 String tag1;
 String tag;
 
-const char* ssid = "8250122";
+int count=1;
+
+const char* ssid = "yydn";
 const char* password = "00001111";
 
 //URL路徑或IP位置
-String serverName = "http://192.168.137.1:3000/api/gossiping/1/";
-//待更新通靈版位置
+String serverName = "http://192.168.137.1:3000/api/OuijaBoard/";
+//URL待更新
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -54,8 +56,9 @@ void loop() {
     for (byte i = 0; i < 4; i++) {
       tag += rfid.uid.uidByte[i];
     }
-
-    Serial.println(tag);
+    tag1=tag;
+    tag="";
+    Serial.println(tag1);
     rfid.PICC_HaltA();}
   // Send an HTTP POST request depending on timerDelay
   if ((millis() - lastTime) > timerDelay) {
@@ -63,17 +66,15 @@ void loop() {
     if(WiFi.status()== WL_CONNECTED){
       WiFiClient client;
       HTTPClient http;
-      if(tag == "163157131167")
+
+      if(count == 4)
       {
-        Serial.println("correct");
-        serverName = serverName + tag ;
-        LED_High();
+        serverName = "http://192.168.137.1:3000/api/OuijaBoard/";
+        count = 1;
       }
-      else{
-        Serial.println("error");
-        serverName = serverName + tag;
-        LED_Low();
-      }
+      serverName = serverName + "tag" + count + "/" + tag1 ;
+      count++;
+
       String serverPath = serverName ;
       serverName=serverName+ "/";
       Serial.println(serverName);
