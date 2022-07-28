@@ -7,22 +7,14 @@ import type { NextPage } from 'next'
 
 const Home: NextPageWithLayout = () => {
   return (
-    <section>
-      <h2>監視畫面</h2>
-
-      <Camera />
-    </section>
-  )
-}
-
-Home.getLayout = function getLayout(page: ReactElement) {
-  return (
     <Layout>
       <Sidebar/>
-      {page}
+      <section>
+        <h2>監視畫面</h2>
+        <Camera />
+      </section>
     </Layout>
   )
 }
 
 export default Home
-
