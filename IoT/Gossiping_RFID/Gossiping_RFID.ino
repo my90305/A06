@@ -3,8 +3,8 @@
 #include <WiFiClient.h>
 #include <SPI.h>
 #include <MFRC522.h>
-#include "LED_HIGH.h"
-#include "LED_LOW.h"
+#include <LED_HIGH.h>
+#include <LED_LOW.h>
 
 constexpr uint8_t RST_PIN = D3;
 constexpr uint8_t SS_PIN = D4;
@@ -13,7 +13,7 @@ MFRC522::MIFARE_Key key;
 String tag1;
 String tag;
 
-const char* ssid = "8250122";
+const char* ssid = "yydn";
 const char* password = "00001111";
 
 //URL路徑或IP位置
@@ -53,8 +53,9 @@ void loop() {
     for (byte i = 0; i < 4; i++) {
       tag += rfid.uid.uidByte[i];
     }
-
-    Serial.println(tag);
+    tag1=tag;
+    tag="";
+    Serial.println(tag1);
     rfid.PICC_HaltA();}
   // Send an HTTP POST request depending on timerDelay
   if ((millis() - lastTime) > timerDelay) {
@@ -62,15 +63,15 @@ void loop() {
     if(WiFi.status()== WL_CONNECTED){
       WiFiClient client;
       HTTPClient http;
-      if(tag == "163157131167")
+      if(tag1 == "163157131167")
       {
         Serial.println("correct");
-        serverName = serverName + tag ;
+        serverName = serverName + tag1 ;
         LED_High();
       }
       else{
         Serial.println("error");
-        serverName = serverName + tag;
+        serverName = serverName + tag1;
         LED_Low();
       }
       String serverPath = serverName ;
