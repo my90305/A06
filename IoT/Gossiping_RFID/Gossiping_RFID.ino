@@ -19,7 +19,7 @@ const char* ssid = "yydn";
 const char* password = "00001111";
 
 //URL路徑或IP位置
-String serverName = "http://192.168.137.1:3000/api/gossiping/1/";
+String serverName = "http://192.168.0.112:3000/api/gossiping/1/";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
