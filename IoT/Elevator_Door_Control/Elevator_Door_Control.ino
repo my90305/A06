@@ -65,9 +65,9 @@ void loop() {
  
   // 依照請求去連接
   int value = 1;
-  if (request.indexOf("/MOTOR=FRONT") != -1)  
+  if (request.indexOf("/DOOR=OPEN") != -1)  
   {
-    Serial.println("MOTOR=FRONT");
+    Serial.println("DOOR=OPEN");
     analogWrite(ENB, 255);
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
@@ -76,9 +76,9 @@ void loop() {
     digitalWrite(IN4, LOW);
     value = 1;
   }
-  if (request.indexOf("/MOTOR=BACK") != -1)  
+  if (request.indexOf("/DOOR=CLOSE") != -1)  
   {
-    Serial.println("MOTOR=BACK");
+    Serial.println("DOOR=CLOSE");
     analogWrite(ENB, 255);
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, HIGH);
@@ -87,9 +87,9 @@ void loop() {
     digitalWrite(IN4, LOW);
     value = 0;
   }
-  if (request.indexOf("/MOTOR=STOP") != -1)  
+  if (request.indexOf("/DOOR=STOP") != -1)  
   {
-    Serial.println("MOTOR=STOP");
+    Serial.println("DOOR=STOP");
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, LOW);
     value = 2;
@@ -100,25 +100,25 @@ void loop() {
   client.println(""); //誤刪除必要的
   client.println("<!DOCTYPE HTML>");
   client.println("<html>");
-  client.println("<head><title>ESP8266 MOTOR Control</title></head>");
-  client.print("Motor is now: ");
+  client.println("<head><title>ESP8266 DOOR Control</title></head>");
+  client.print("Door is now: ");
  
   if(value == 1) 
   {
-    client.print("FRONT");
+    client.print("OPEN");
   } 
   else if(value == 0)
   {
-    client.print("BACK");
+    client.print("CLOSE");
   }
   else
   {
     client.print("STOP");
   }
   client.println("<br><br>");
-  client.println("Turn <a href=\"/MOTOR=FRONT\">FRONT</a> MOTOR<br>");
-  client.println("Turn <a href=\"/MOTOR=BACK\">BACK</a> MOTOR<br>");
-  client.println("Turn <a href=\"/MOTOR=STOP\">STOP</a> MOTOR<br>");
+  client.println("Turn <a href=\"/DOOR=OPEN\">OPEN</a> DOOR<br>");
+  client.println("Turn <a href=\"/DOOR=CLOSE\">CLOSE</a> DOOR<br>");
+  client.println("Turn <a href=\"/DOOR=STOP\">STOP</a> DOOR<br>");
   client.println("</html>");
  
   delay(1);
