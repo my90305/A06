@@ -10,10 +10,10 @@ constexpr uint8_t RST_PIN = D3;
 constexpr uint8_t SS_PIN = D4;
 MFRC522 rfid(SS_PIN, RST_PIN);
 MFRC522::MIFARE_Key key;
-String tag1;
+String tag_temporary;
 String tag;
 
-int count=1;
+int count = 1;
 
 const char* ssid = "yydn";
 const char* password = "00001111";
@@ -56,9 +56,9 @@ void loop() {
     for (byte i = 0; i < 4; i++) {
       tag += rfid.uid.uidByte[i];
     }
-    tag1=tag;
-    tag="";
-    Serial.println(tag1);
+    tag_temporary = tag;
+    tag = "";
+    Serial.println(tag_temporary);
     rfid.PICC_HaltA();}
   // Send an HTTP POST request depending on timerDelay
   if ((millis() - lastTime) > timerDelay) {
@@ -72,7 +72,7 @@ void loop() {
         serverName = "http://192.168.137.1:3000/api/OuijaBoard/";
         count = 1;
       }
-      serverName = serverName + "tag" + count + "/" + tag1 ;
+      serverName = serverName + "tag" + count + "/" + tag_temporary ;
       count++;
 
       String serverPath = serverName ;
