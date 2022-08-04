@@ -8,7 +8,7 @@ import type { NextPage } from 'next'
 const Elevator: NextPageWithLayout = () => {
   return (
     <Layout>
-      <Sidebar/>
+      <Sidebar />
       <section>
         <h2>電梯控制</h2>
         <ElevatorController />

@@ -5,11 +5,10 @@ import Image from "next/image";
 export default function Sidebar() {
   return (
     <nav className={styles.nav}>
-        
-        <img src="/TaiChi.png"
-            width="100 px"
-            height="100 px"
-            className={styles.rotate}/>
+      <img src="/TaiChi.png"
+        width="100 px"
+        height="100 px"
+        className={styles.rotate} />
       <Link href="/">
         <a>監控畫面</a>
       </Link>
