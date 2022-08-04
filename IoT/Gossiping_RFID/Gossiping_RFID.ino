@@ -10,7 +10,7 @@ constexpr uint8_t RST_PIN = D3;
 constexpr uint8_t SS_PIN = D4;
 MFRC522 rfid(SS_PIN, RST_PIN);
 MFRC522::MIFARE_Key key;
-String tag1;
+String tag_temporary;
 String tag;
 
 int count = 1;
@@ -55,9 +55,9 @@ void loop() {
     for (byte i = 0; i < 4; i++) {
       tag += rfid.uid.uidByte[i];
     }
-    tag1=tag;
-    tag="";
-    Serial.println(tag1);
+    tag_temporary = tag;
+    tag = "";
+    Serial.println(tag_temporary);
     rfid.PICC_HaltA();}
   // Send an HTTP POST request depending on timerDelay
   if ((millis() - lastTime) > timerDelay) {
@@ -69,15 +69,15 @@ void loop() {
       {
         serverName = "http://192.168.137.1:3000/api/gossiping/1/";
       }
-      if(tag1 == "163157131167")
+      if(tag_temporary == "163157131167")
       {
         Serial.println("correct");
-        serverName = serverName + tag1 ;
+        serverName = serverName + tag_temporary ;
         LED_High();
       }
       else{
         Serial.println("error");
-        serverName = serverName + tag1;
+        serverName = serverName + tag_temporary;
         LED_Low();
       }
       String serverPath = serverName ;

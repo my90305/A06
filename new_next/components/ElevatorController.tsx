@@ -4,7 +4,6 @@ import styles from './elevatorController.module.css'
 const apiDoor1 = `http://${process.env.REAL_WORLD_DOOR_IP}`;
 const apiDoor2 = `http://${process.env.SPIRIT_WORLD_DOOR_IP}`;
 
-
 enum VIDEOS_TYPE {
   ESP32_LIVE,
 }
