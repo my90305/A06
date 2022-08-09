@@ -65,7 +65,7 @@ void loop() {
  
   // 依照請求去連接
   int value = 1;
-  if (request.indexOf("/DOOR=OPEN") != -1)  
+  if (request.indexOf("/door?=1") != -1)  
   {
     Serial.println("DOOR=OPEN");
     analogWrite(ENB, 255);
@@ -76,7 +76,7 @@ void loop() {
     digitalWrite(IN4, LOW);
     value = 1;
   }
-  if (request.indexOf("/DOOR=CLOSE") != -1)  
+  if (request.indexOf("/door?=0") != -1)  
   {
     Serial.println("DOOR=CLOSE");
     analogWrite(ENB, 255);
@@ -87,7 +87,7 @@ void loop() {
     digitalWrite(IN4, LOW);
     value = 0;
   }
-  if (request.indexOf("/DOOR=STOP") != -1)  
+  if (request.indexOf("/door?=2") != -1)  
   {
     Serial.println("DOOR=STOP");
     digitalWrite(IN3, LOW);
@@ -116,9 +116,9 @@ void loop() {
     client.print("STOP");
   }
   client.println("<br><br>");
-  client.println("Turn <a href=\"/DOOR=OPEN\">OPEN</a> DOOR<br>");
-  client.println("Turn <a href=\"/DOOR=CLOSE\">CLOSE</a> DOOR<br>");
-  client.println("Turn <a href=\"/DOOR=STOP\">STOP</a> DOOR<br>");
+  client.println("Turn <a href=\"/door?=1\">OPEN</a> DOOR<br>");
+  client.println("Turn <a href=\"/door?=0\">CLOSE</a> DOOR<br>");
+  client.println("Turn <a href=\"/door?=2\">STOP</a> DOOR<br>");
   client.println("</html>");
  
   delay(1);
