@@ -10,7 +10,7 @@
             "includePath": [
                 "c:/Users/user/Documents/PlatformIO/Projects/A06/include",
                 "c:/Users/user/Documents/PlatformIO/Projects/A06/src",
-                "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/esp32cam/src",
+                "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/MFRC522/src",
                 "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ESPAsyncWebServer-esphome/src",
                 "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ESPAsyncTCP-esphome/src",
                 "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ESP Async WebServer/src",
@@ -19,7 +19,6 @@
                 "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ESPAsyncTCP/src",
                 "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ArduinoJson/src",
                 "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/L298N/src",
-                "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/MFRC522/src",
                 "C:/Users/user/.platformio/packages/framework-arduinoespressif8266/tools/sdk/include",
                 "C:/Users/user/.platformio/packages/framework-arduinoespressif8266/cores/esp8266",
                 "C:/Users/user/.platformio/packages/toolchain-xtensa/include",
@@ -67,7 +66,7 @@
                 "path": [
                     "c:/Users/user/Documents/PlatformIO/Projects/A06/include",
                     "c:/Users/user/Documents/PlatformIO/Projects/A06/src",
-                    "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/esp32cam/src",
+                    "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/MFRC522/src",
                     "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ESPAsyncWebServer-esphome/src",
                     "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ESPAsyncTCP-esphome/src",
                     "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ESP Async WebServer/src",
@@ -76,7 +75,6 @@
                     "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ESPAsyncTCP/src",
                     "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/ArduinoJson/src",
                     "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/L298N/src",
-                    "c:/Users/user/Documents/PlatformIO/Projects/A06/.pio/libdeps/nodemcuv2/MFRC522/src",
                     "C:/Users/user/.platformio/packages/framework-arduinoespressif8266/tools/sdk/include",
                     "C:/Users/user/.platformio/packages/framework-arduinoespressif8266/cores/esp8266",
                     "C:/Users/user/.platformio/packages/toolchain-xtensa/include",
