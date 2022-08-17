@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './camera.module.css'
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 enum VIDEOS_TYPE {
   YOUTUBE,
@@ -41,16 +43,18 @@ export default function Camera() {
 
       <br />
       
-      <button className={styles.button}
-        disabled={videoType === VIDEOS_TYPE.YOUTUBE}
-        onClick={() => setVideoType(VIDEOS_TYPE.YOUTUBE)}>
-        機關試做
-      </button>
-      <button className={styles.button}
-        disabled={videoType === VIDEOS_TYPE.ESP32_LIVE}
-        onClick={() => setVideoType(VIDEOS_TYPE.ESP32_LIVE)}>
-        畫面串流
-      </button>
+      <ButtonGroup variant="contained" aria-label="outlined primary button group">
+        <Button className={styles.button}
+          disabled={videoType === VIDEOS_TYPE.YOUTUBE}
+          onClick={() => setVideoType(VIDEOS_TYPE.YOUTUBE)}>
+          機關試做
+        </Button>
+        <Button className={styles.button}
+          disabled={videoType === VIDEOS_TYPE.ESP32_LIVE}
+          onClick={() => setVideoType(VIDEOS_TYPE.ESP32_LIVE)}>
+          畫面串流
+        </Button>
+      </ButtonGroup>
     </div>
   );
 }
