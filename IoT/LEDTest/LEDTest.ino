@@ -1,3 +1,5 @@
+#include <ESP8266WiFi.h>
+
 int ledred = 14;     // LED pin
 int ledgreen = 13;
 int button1 = 16; // push button is connected

@@ -3,23 +3,21 @@
 #include <WiFiClient.h>
 #include <SPI.h>
 #include <MFRC522.h>
-#include <LED_HIGH.h>
-#include <LED_LOW.h>
+#include "LED_HIGH.h"
+#include "LED_LOW.h"
 
 constexpr uint8_t RST_PIN = D3;
 constexpr uint8_t SS_PIN = D4;
 MFRC522 rfid(SS_PIN, RST_PIN);
 MFRC522::MIFARE_Key key;
-String tag_temporary;
+String tag1;
 String tag;
 
-int count = 1;
-
-const char* ssid = "yydn";
-const char* password = "00001111";
+const char* ssid = "andy";
+const char* password = "andy90121";
 
 //URL路徑或IP位置
-String serverName = "http://192.168.0.112:3000/api/gossiping/1/";
+String serverName = "http://192.168.137.1:3000/api/gossiping/1/";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -55,9 +53,8 @@ void loop() {
     for (byte i = 0; i < 4; i++) {
       tag += rfid.uid.uidByte[i];
     }
-    tag_temporary = tag;
-    tag = "";
-    Serial.println(tag_temporary);
+
+    Serial.println(tag);
     rfid.PICC_HaltA();}
   // Send an HTTP POST request depending on timerDelay
   if ((millis() - lastTime) > timerDelay) {
@@ -65,19 +62,15 @@ void loop() {
     if(WiFi.status()== WL_CONNECTED){
       WiFiClient client;
       HTTPClient http;
-      if(count == 2)
-      {
-        serverName = "http://192.168.137.1:3000/api/gossiping/1/";
-      }
-      if(tag_temporary == "163157131167")
+      if(tag == "163157131167")
       {
         Serial.println("correct");
-        serverName = serverName + tag_temporary ;
+        serverName = serverName + tag ;
         LED_High();
       }
       else{
         Serial.println("error");
-        serverName = serverName + tag_temporary;
+        serverName = serverName + tag;
         LED_Low();
       }
       String serverPath = serverName ;

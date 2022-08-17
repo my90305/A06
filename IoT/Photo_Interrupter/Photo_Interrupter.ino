@@ -1,3 +1,8 @@
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+#include <SPI.h>
+
 int Led = 13; // define LED pin
 int P_I = 14; // define photo interrupter signal pin
 int val; //define a numeric variable
