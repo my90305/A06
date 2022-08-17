@@ -1,5 +1,13 @@
 #include <ESP8266WiFi.h>
-
+void setup() {
+  Serial.begin(115200);
+}
+void loop() {
+  Serial.println("Hello world");
+  delay(2000);
+  Serial.println("Test");
+  delay(2000);
+}
 /*int ledred = 14;     // LED pin
 int ledgreen = 13;
 int button1 = 16; // push button is connected
@@ -59,12 +67,4 @@ void loop() {
        }
        
 }*/
-void setup() {
-  Serial.begin(115200);
-}
-void loop() {
-  Serial.println("Hello world");
-  delay(2000);
-  Serial.println("Test");
-  delay(2000);
-}
+
