@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <ESP8266WiFi.h>
 
 const char* ssid = "yydn"; // 設定欲連接無線網路名稱

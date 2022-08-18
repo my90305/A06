@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include"esp32cam.h"
 //#include "esp_camera.h"
 #include <WiFi.h>
