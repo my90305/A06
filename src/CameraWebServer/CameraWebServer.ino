@@ -2,6 +2,7 @@
 //#include"esp32cam.h"
 #include "esp_camera.h"
 #include <WiFi.h>
+#include "WIFI_SET.h"
 
 //
 // WARNING!!! PSRAM IC required for UXGA resolution and high JPEG quality
@@ -35,8 +36,8 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-const char* ssid = "yydn";
-const char* password = "00001111";
+/*const char* ssid = "yydn";
+const char* password = "00001111";*/
 
 void startCameraServer();
 
@@ -126,13 +127,13 @@ void setup() {
   s->set_vflip(s, 1);
 #endif
 
-  WiFi.begin(ssid, password);
+  /*WiFi.begin(ssid, password);
   WiFi.setSleep(false);
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
-  }
+  }*/
   Serial.println("");
   Serial.println("WiFi connected");
 

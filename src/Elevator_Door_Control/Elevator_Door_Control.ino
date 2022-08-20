@@ -1,8 +1,9 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
+#include "WIFI_SET.h"
 
-const char* ssid = "yydn"; // 設定欲連接無線網路名稱
-const char* password = "00001111"; // 設定欲連接無線網路密碼
+/*const char* ssid = "barry-1"; // 設定欲連接無線網路名稱
+const char* password = "22150157"; // 設定欲連接無線網路密碼*/
 
 int ENB = 15;
 int IN3 = 0;
@@ -12,7 +13,6 @@ WiFiServer server(80);
 
 void setup() {
   Serial.begin(115200);
-  
   pinMode(ENB, OUTPUT);
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
@@ -20,17 +20,18 @@ void setup() {
   digitalWrite(IN4, LOW);
 
   // 連接wifi
+  WIFI();
   Serial.println();
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
  
-  WiFi.begin(ssid, password);
+  /*WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) 
   {
     delay(500);
     Serial.print(".");
-  }
+  }*/
   Serial.println("");
   Serial.println("WiFi connected");
  

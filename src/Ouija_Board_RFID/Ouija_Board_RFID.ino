@@ -6,6 +6,7 @@
 #include <MFRC522.h>
 #include <LED_HIGH.h>
 #include <LED_LOW.h>
+#include "WIFI_SET.h"
 
 constexpr uint8_t RST_PIN = D3;
 constexpr uint8_t SS_PIN = D4;
@@ -16,8 +17,8 @@ String tag;
 
 int count = 1;
 
-const char* ssid = "yydn";
-const char* password = "00001111";
+/*const char* ssid = "yydn";
+const char* password = "00001111";*/
 
 //URL路徑或IP位置
 String serverName = "http://192.168.0.112:3000/api/OuijaBoard/";
@@ -33,14 +34,17 @@ unsigned long timerDelay = 1000;
 
 void setup() {
   Serial.begin(115200); 
-
-  WiFi.begin(ssid, password);
+  WIFI();
+  /*WiFi.begin(ssid, password);
   Serial.println("Connecting");
   while(WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
-  }
+  }*/
   Serial.println("");
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  Serial.println("WiFi connected");
   Serial.print("Connected to WiFi network with IP Address: ");
   Serial.println(WiFi.localIP());
  
