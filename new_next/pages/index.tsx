@@ -1,6 +1,4 @@
 import Camera from 'components/Camera'
-import Layout from '../components/Layout'
-import Sidebar from '../components/Sidebar'
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
 import type { NextPage } from 'next'

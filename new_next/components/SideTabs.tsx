@@ -5,6 +5,11 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Camera from './Camera';
 import ElevatorController from './ElevatorController';
+import ImgLink from './ImgLink';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -56,17 +61,14 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider' }}
+        centered
+        sx={{ borderRight: 1, borderColor: 'divider',width: 'auto'}}
       >
-        <Tab label="監控畫面" {...a11yProps(0)} />
-        <Tab label="電梯控制" {...a11yProps(1)} />
-        <Tab label="相關連結" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
+        <Tab label="監控畫面" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(0)} />
+        <Tab label="電梯控制" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(1)} />
+        <Tab label="相關連結" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(2)} />
       </Tabs>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} >
         <h2>監控畫面</h2>
         <Camera/>
       </TabPanel>
@@ -76,18 +78,7 @@ export default function VerticalTabs() {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <h2>相關連結</h2>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
+        <ImgLink/>
       </TabPanel>
     </Box>
   );
