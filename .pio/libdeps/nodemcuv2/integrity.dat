@@ -1,6 +1,4 @@
-ottowinter/ESPAsyncWebServer-esphome@^3.0.0
-miguelbalboa/MFRC522@^1.4.10
-me-no-dev/ESP Async WebServer@^1.2.3
-bblanchon/ArduinoJson@^6.19.4
 andrealombardo/L298N@^2.0.2
-me-no-dev/ESPAsyncTCP@^1.2.2
+miguelbalboa/MFRC522@^1.4.10
+SPI
+espressif/esp32-camera@^2.0.0
