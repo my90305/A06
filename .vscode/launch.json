@@ -12,31 +12,49 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "c:/Users/allen/OneDrive/文件/GitHub/A06/.pio/build/nodemcuv2/firmware.elf",
+<<<<<<< HEAD
+            "executable": "c:/Users/PC/Desktop/A06/.pio/build/nodemcuv2/firmware.elf",
             "projectEnvName": "nodemcuv2",
-            "toolchainBinDir": "C:/Users/allen/.platformio/packages/toolchain-xtensa/bin",
+            "toolchainBinDir": "C:/Users/PC/.platformio/packages/toolchain-xtensa/bin",
+=======
+            "executable": "c:/Users/Andy/Desktop/A06/.pio/build/esp32cam/firmware.elf",
+            "projectEnvName": "esp32cam",
+            "toolchainBinDir": "C:/Users/Andy/.platformio/packages/toolchain-xtensa-esp32/bin",
+>>>>>>> 01b54237017ef0566fc557a5c161058f234ebf2d
             "internalConsoleOptions": "openOnSessionStart",
             "preLaunchTask": {
                 "type": "PlatformIO",
-                "task": "Pre-Debug"
+                "task": "Pre-Debug (esp32cam)"
             }
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "c:/Users/allen/OneDrive/文件/GitHub/A06/.pio/build/nodemcuv2/firmware.elf",
+<<<<<<< HEAD
+            "executable": "c:/Users/PC/Desktop/A06/.pio/build/nodemcuv2/firmware.elf",
             "projectEnvName": "nodemcuv2",
-            "toolchainBinDir": "C:/Users/allen/.platformio/packages/toolchain-xtensa/bin",
+            "toolchainBinDir": "C:/Users/PC/.platformio/packages/toolchain-xtensa/bin",
+=======
+            "executable": "c:/Users/Andy/Desktop/A06/.pio/build/esp32cam/firmware.elf",
+            "projectEnvName": "esp32cam",
+            "toolchainBinDir": "C:/Users/Andy/.platformio/packages/toolchain-xtensa-esp32/bin",
+>>>>>>> 01b54237017ef0566fc557a5c161058f234ebf2d
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (without uploading)",
-            "executable": "c:/Users/allen/OneDrive/文件/GitHub/A06/.pio/build/nodemcuv2/firmware.elf",
+<<<<<<< HEAD
+            "executable": "c:/Users/PC/Desktop/A06/.pio/build/nodemcuv2/firmware.elf",
             "projectEnvName": "nodemcuv2",
-            "toolchainBinDir": "C:/Users/allen/.platformio/packages/toolchain-xtensa/bin",
+            "toolchainBinDir": "C:/Users/PC/.platformio/packages/toolchain-xtensa/bin",
+=======
+            "executable": "c:/Users/Andy/Desktop/A06/.pio/build/esp32cam/firmware.elf",
+            "projectEnvName": "esp32cam",
+            "toolchainBinDir": "C:/Users/Andy/.platformio/packages/toolchain-xtensa-esp32/bin",
+>>>>>>> 01b54237017ef0566fc557a5c161058f234ebf2d
             "internalConsoleOptions": "openOnSessionStart",
             "loadMode": "manual"
         }
