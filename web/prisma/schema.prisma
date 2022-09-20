@@ -7,12 +7,22 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
+//model Player {
+//  id        Int     @id @default(autoincrement())
+//  name      String?
+//  begintime DateTime @default(now())
+//  endtime   DateTime @updatedAt
+//  level     Level[]
+//}
+
+
 model Level {
-  id    Int     @id @default(autoincrement())
-  name  String?
-  complete Boolean
+  id        Int     @id @default(autoincrement())
+  name      String?
+  time      DateTime @updatedAt
+  complete  Boolean
 }
 
