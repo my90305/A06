@@ -5,9 +5,10 @@ import styles from './ImgLink.module.css'
 
 export default function ImgLink() {
   return (
-    <Box sx={{ width: 750 }}>
+    <Box sx={{ width: 800 }}>
       {itemData.map(item => 
         <Button 
+          key={item.img}
           href={item.link}
           target={'_blank'}
           className={styles.button}>
@@ -34,7 +35,7 @@ const itemData = [
   {
     img: '/Img/Arduino.png',
     title: 'Arduino',
-    width: '300',
+    width: '200',
     height: '200',
     link: 'https://www.arduino.cc/',
   },
@@ -55,7 +56,7 @@ const itemData = [
   {
     img: '/Img/Next_JS.png',
     title: 'NextJS',
-    wwidth: '800',
+    wwidth: '200',
     height: '200',
     link: 'https://nextjs.org/',
   },
@@ -69,7 +70,7 @@ const itemData = [
   {
     img: '/Img/React.png',
     title: 'React',
-    width: '300',
+    width: '200',
     height: '200',
     link: 'https://zh-hant.reactjs.org/',
   },

@@ -1,5 +1,7 @@
 .button:hover {
+    overflow: hidden;
     transform: scale(1.5);
+    transition: 0.5s;
     z-index:100;
     position: relative;
 }
