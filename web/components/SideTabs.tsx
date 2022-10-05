@@ -6,10 +6,7 @@ import Box from '@mui/material/Box';
 import Camera from './Camera';
 import ElevatorController from './ElevatorController';
 import ImgLink from './ImgLink';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import MainPage from './MainPage';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -29,7 +26,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -63,19 +60,24 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: 'divider',width: 'auto'}}
       >
-        <Tab label="監控畫面" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(0)} />
-        <Tab label="電梯控制" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(1)} />
-        <Tab label="相關連結" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(2)} />
+        <Tab label="首頁" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(0)} />
+        <Tab label="監控畫面" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(1)} />
+        <Tab label="電梯控制" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(2)} />
+        <Tab label="相關連結" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0} >
+        <h2>首頁</h2>
+        <MainPage/>
+      </TabPanel>
+      <TabPanel value={value} index={1} >
         <h2>監控畫面</h2>
         <Camera/>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={2}>
         <h2>電梯控制</h2>
         <ElevatorController/>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={3}>
         <h2>相關連結</h2>
         <ImgLink/>
       </TabPanel>
