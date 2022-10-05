@@ -31,8 +31,8 @@ export default function handler (req: NextApiRequest, res: NextApiResponse) {
         tag3Id === CorrectIdArray[2] ) {
             getBoxESP8266()
             console.log('YEEEEEEEEEEEE')
-            res.status(200).json({response: 'Yes'})
+            return res.status(200).json({response: 'Yes'})
     }
 
-    res.status(200).json({response: 'OuijaBroad Check API'})
+    return res.status(200).json({response: 'OuijaBroad Check API'})
 }
