@@ -1,7 +1,7 @@
 const realWorldDoorIp = `http://${process.env.REAL_WORLD_DOOR_IP}`;
 
 const door = async (isOpen: boolean) => {
-  await fetch(`${realWorldDoorIp}/DOOR=${isOpen ? 'OPEN' : 'CLOSE'}`, {
+  await fetch(`${realWorldDoorIp}/DOOR=${isOpen ? '1' : '0'}`, {
     method: 'GET',
   })
 }

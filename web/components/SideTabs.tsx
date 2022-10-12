@@ -60,10 +60,10 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: 'divider',width: 'auto'}}
       >
-        <Tab label="首頁" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(0)} />
-        <Tab label="監控畫面" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(1)} />
-        <Tab label="電梯控制" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(2)} />
-        <Tab label="相關連結" sx={{ typography: 'h4' ,fontWeight: 500}} {...a11yProps(3)} />
+        <Tab label="首頁" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(0)} />
+        <Tab label="監控畫面" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(1)} />
+        <Tab label="電梯控制" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(2)} />
+        <Tab label="相關連結" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0} >
         <h2>首頁</h2>
