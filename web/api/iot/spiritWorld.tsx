@@ -1,9 +1,10 @@
 const spiritWorldDoorIp = `http://${process.env.SPIRIT_WORLD_DOOR_IP}`;
 
 const door = async (isOpen: boolean) => {
-  await fetch(`${spiritWorldDoorIp}/DOOR=${isOpen ? '1' : '0'}`, {
+  const response = await fetch(`${spiritWorldDoorIp}/door?=${isOpen ? '1' : '0'}`, {
     method: 'GET',
   })
+  console.log(response)
 }
 
 const spiritWorld = {
