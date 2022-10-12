@@ -1,18 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { getBoxESP8266 } from '../../../../../../OuijaBroad/index'
+import { updataLevelStatus } from '../../../../../../OuijaBroad/index'
 
-const apiPrefix = `http://${process.env.Ouija_Broad_BOX_IP}:${process.env.Ouija_Broad_BOX_HOST}`;
 const CORRECT_LIST = [
     { id: 0, tagId: '163157131167' },
     { id: 1, tagId: '677094167' },
     { id: 2, tagId: '2296120173' }, ,
 ]
 
-export async function getBoxESP8266 () {
-    const response = await fetch(`${apiPrefix}`, {
-    method: 'GET',
-    })
-    console.log(response)
-}
+let checkedArray = [false, false, false]
+const isAllChecked = () => checkedArray.findIndex((item) => item === false) < 0
 
 export default function handler (req: NextApiRequest, res: NextApiResponse) {
 
@@ -26,13 +23,27 @@ export default function handler (req: NextApiRequest, res: NextApiResponse) {
     }
     console.log(CorrectIdArray)
 
-    if (tag1Id === CorrectIdArray[0] &&
-        tag2Id === CorrectIdArray[1] &&
-        tag3Id === CorrectIdArray[2] ) {
-            getBoxESP8266()
-            console.log('YEEEEEEEEEEEE')
-            return res.status(200).json({response: 'Yes'})
+    if (isAllChecked()) {
+        getBoxESP8266()
+        updataLevelStatus()
+        return res.status(200).json({ checkedArray, isAllChecked: isAllChecked() })
     }
-
-    return res.status(200).json({response: 'OuijaBroad Check API'})
+    else if (checkedArray[0] && checkedArray[1]) {
+        if (tag3Id === CorrectIdArray[2]) {
+            checkedArray[2] = true
+        }
+        return res.status(200).json({ checkedArray, isAllChecked: isAllChecked() })
+    }
+    else if (checkedArray[0]) {
+        if (tag2Id === CorrectIdArray[1]) {
+            checkedArray[1] = true
+        }
+        return res.status(200).json({ checkedArray, isAllChecked: isAllChecked() })
+    }
+    else {
+        if (tag1Id === CorrectIdArray[0]) {
+            checkedArray[0] = true
+        }
+        return res.status(200).json({ checkedArray, isAllChecked: isAllChecked() })
+    }
 }
