@@ -1,8 +1,8 @@
-import realWrold from './realWorld';
+import realWorld from './realWorld';
 import spiritWorld from './spiritWorld';
 
 const iotApi = {
-  realWrold,
+  realWorld,
   spiritWorld
 }
 

@@ -1,4 +1,5 @@
 import iotApi from 'api/iot';
+import handler from 'pages/api/proxy';
 import { useState } from 'react';
 import styles from './elevatorController.module.css'
 
@@ -22,13 +23,13 @@ export default function ElevatorController() {
   const onRealWorldDoorClick = async () => {
     const newIsOpen = !isRealWorldDoorOpen
     setIsRealWorldDoorOpen(newIsOpen)
-    await iotApi.realWrold.door(newIsOpen)
+    await handler.door(newIsOpen)
   }
 
   const onSpiritWorldDoorClick = async () => {
     const newIsOpen = !isSpiritWorldDoorOpen
     setIsSpiritWorldDoorOpen(newIsOpen)
-    await iotApi.spiritWorld.door(newIsOpen)
+    await handler.door(newIsOpen)
   }
 
   return (

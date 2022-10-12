@@ -6,8 +6,8 @@ const door = async (isOpen: boolean) => {
   })
 }
 
-const realWrold = {
+const realWorld = {
   door
 }
 
-export default realWrold;
+export default realWorld;
