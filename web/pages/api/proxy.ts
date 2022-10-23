@@ -1,13 +1,10 @@
 import iotApi from 'api/iot';
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const door = async function (isOpen: boolean) {
-  const result = await iotApi.spiritWorld.door(isOpen)
+export async function handler (req: NextApiRequest, res: NextApiResponse) {
+  const result = await iotApi.spiritWorld.door(false)
   console.log (result)
+  res.status(200).json({response: 'test success'})
 }
 
-const handler = {
-  door
-}
-
-export default handler;
+export default handler
