@@ -1,16 +1,12 @@
 import { PrismaClient } from '@prisma/client'
-import { time, timeEnd } from 'console'
 
 const prisma = new PrismaClient()
 
+//將所有機關在資料庫的狀態重設回初始狀態
 async function main() {
   await prisma.level.updateMany({
-    where: {
-      complete: true
-    },
-    data: {
-      complete: false
-    }
+    where: { complete: true },
+    data: { complete: false }
   })
 }
 
