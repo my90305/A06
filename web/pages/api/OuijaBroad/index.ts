@@ -3,8 +3,8 @@ import { PrismaClient } from '@prisma/client';
 
 const apiPrefix = `http://${process.env.Ouija_Broad_BOX_IP}:${process.env.Ouija_Broad_BOX_HOST}`;
 
-export async function updataLevelStatus () {
-  const prisma =new PrismaClient()
+export async function updataLevelStatus () {//更新資料庫機關狀態的紀錄的涵式
+  const prisma = new PrismaClient()
   
   await prisma.level.update({
     where: {
