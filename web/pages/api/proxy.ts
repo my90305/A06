@@ -6,5 +6,5 @@ export async function handler (req: NextApiRequest, res: NextApiResponse) {
   console.log (result)
   res.status(200).json({response: 'test success'})
 }
- 
+
 export default handler
