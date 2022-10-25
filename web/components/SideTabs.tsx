@@ -7,6 +7,7 @@ import Camera from './Camera';
 import ElevatorController from './ElevatorController';
 import ImgLink from './ImgLink';
 import MainPage from './MainPage';
+import PrismaClear from './PrismaClear';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -64,6 +65,7 @@ export default function VerticalTabs() {
         <Tab label="監控畫面" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(1)} />
         <Tab label="電梯控制" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(2)} />
         <Tab label="相關連結" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(3)} />
+        <Tab label="資料庫清空" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(4)} />
       </Tabs>
       <TabPanel value={value} index={0} >
         <h2>首頁</h2>
@@ -80,6 +82,10 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={3}>
         <h2>相關連結</h2>
         <ImgLink/>
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <h2>資料庫清空</h2>
+        <PrismaClear/>
       </TabPanel>
     </Box>
   );
