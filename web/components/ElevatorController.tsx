@@ -24,7 +24,6 @@ export default function ElevatorController() {
     setIsRealWorldDoorOpen(newIsOpen)
     await iotApi.realWorld.door(newIsOpen)
   }
-
   const onSpiritWorldDoorClick = async () => {
     const newIsOpen = !isSpiritWorldDoorOpen
     setIsSpiritWorldDoorOpen(newIsOpen)
