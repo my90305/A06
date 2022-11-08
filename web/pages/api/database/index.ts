@@ -3,14 +3,14 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 //將所有機關在資料庫的狀態重設回初始狀態
-async function main() {
+async function init() {
   await prisma.level.updateMany({
     where: { complete: true },
     data: { complete: false }
   })
 }
 
-main()
+init()
   .then(async () => {
     await prisma.$disconnect()
   })

@@ -1,7 +1,7 @@
-const prisma = async () => {
-    await fetch(`api/database`, {
-    method: 'GET',
-  })
+import init from './reset'
+
+const database = {
+  init,
 }
 
-export default prisma
+export default database

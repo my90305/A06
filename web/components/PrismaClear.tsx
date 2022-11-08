@@ -1,9 +1,9 @@
-import prisma from 'api/prisma';
+import database from 'api/prisma';
 import styles from './elevatorController.module.css'
 
 export default function PrismaClear() {
     const onPrismaClearClick = async () => {
-      await prisma()
+      await database.init.completeStatus
     }
   
     return (
