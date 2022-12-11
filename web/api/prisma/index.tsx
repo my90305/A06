@@ -1,4 +1,4 @@
-import init from './reset'
+import init from './resetCompeletStatus'
 
 const database = {
   init,
