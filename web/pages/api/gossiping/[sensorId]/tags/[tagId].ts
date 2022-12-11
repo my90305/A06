@@ -3,9 +3,9 @@ import { getBoxESP8266 } from '../../../gossiping/index'
 import { updataLevelStatus } from '../../../gossiping/index'
 
 const CORRECT_LIST = [
-  { id: 0, sensorId: '0', tagId: '163157131167' },
-  { id: 1, sensorId: '1', tagId: '677094167' },
-  { id: 2, sensorId: '2', tagId: '2296120173' }, 
+  { id: 0, sensorId: '102', tagId: '1086722722' },
+  { id: 1, sensorId: '103', tagId: '122233120128' },
+  //{ id: 2, sensorId: '2', tagId: '2296120173' }, 
 ]
 
 let checkedArray = [false, false, false]
@@ -18,9 +18,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
 
   for (const item of CORRECT_LIST) {
-    if (item &&
-      item.sensorId === sensorId &&
-      item.tagId === tagId) {
+    if (item 
+        && item.sensorId === sensorId
+        && item.tagId === tagId) {
       checkedArray[item.id] = true;
       if (isAllChecked()) {
         console.log('yeeee');
@@ -33,4 +33,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
 
   return res.status(200).json({ error: 'Not this card' })
+}
+
+export async function initCheckArray () {
+  checkedArray = [false]
 }
