@@ -18,6 +18,7 @@ export default function PrismaClear() {
           清空資料庫
         </button>
         <br/>
+        <br/>
         <button className={styles.button}
           onClick={onResetCheckArrayClick}>
           機關重製

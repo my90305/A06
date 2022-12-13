@@ -42,6 +42,7 @@ export default function ElevatorController() {
         陽間{isRealWorldDoorOpen ? '開門' : '關門'}
       </button>
       <br />
+      <br />
       
 
       <button className={styles.button}
