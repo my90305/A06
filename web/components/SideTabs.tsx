@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -8,6 +7,8 @@ import ElevatorController from './ElevatorController';
 import ImgLink from './ImgLink';
 import MainPage from './MainPage';
 import PrismaClear from './PrismaClear';
+import styles from './sideTabs.module.css'
+import Tabs, { tabsClasses } from '@mui/material/Tabs';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -51,15 +52,22 @@ export default function VerticalTabs() {
 
   return (
     <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex'}}
+      sx={{
+        flexGrow: 1,
+        bgcolor: 'background.paper',
+      }}
     >
       <Tabs
-        orientation="vertical"
-        variant="scrollable"
         value={value}
         onChange={handleChange}
-        aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider',width: 'auto'}}
+        scrollButtons
+        aria-label="visible arrows tabs example"
+        className={styles.tab}
+        sx={{
+          [`& .${tabsClasses.scrollButtons}`]: {
+            '&.Mui-disabled': { opacity: 0.3 },
+          },
+        }}
       >
         <Tab label="首頁" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(0)} />
         <Tab label="監控畫面" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(1)} />
@@ -68,24 +76,39 @@ export default function VerticalTabs() {
         <Tab label="資料庫清空" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(4)} />
       </Tabs>
       <TabPanel value={value} index={0} >
-        <h2>首頁</h2>
-        <MainPage/>
+        <Box >
+          <h2  className={styles.title}>
+            首頁</h2>
+          <MainPage/>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={1} >
-        <h2>監控畫面</h2>
-        <Camera/>
+        <Box >
+          <h2 className={styles.title}>
+            監控畫面</h2>
+          <Camera/>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <h2>電梯控制</h2>
-        <ElevatorController/>
+        <Box >
+          <h2 className={styles.title}>
+            電梯控制</h2>
+          <ElevatorController/>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <h2>相關連結</h2>
-        <ImgLink/>
+        <Box >
+          <h2 className={styles.title}>
+            相關連結</h2>
+          <ImgLink/>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <h2>資料庫清空</h2>
-        <PrismaClear/>
+        <Box>
+          <h2 className={styles.title}>
+            資料庫清空</h2>
+          <PrismaClear/>
+        </Box>
       </TabPanel>
     </Box>
   );

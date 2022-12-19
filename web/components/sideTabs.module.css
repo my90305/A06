@@ -1,0 +1,9 @@
+.title{
+  background-color: #f7f7f7; /* 告訴電腦背景顏色 */
+  padding: 25px 25px 25px 25px; /* 告訴電腦內距要多大 */
+  border-left: 8px solid #e85a5a; /* 告訴電腦左邊框要多寬、跟顏色 */
+  color: #333 !important; /* 告訴電腦文字顏色 */
+}
+.tab{
+  background-color: #f3f1ee;
+}

@@ -16,7 +16,7 @@
   .button:hover {background-color: rgb(110, 111, 111);}
   
   .button:active {
-    background-color: rgb(244, 15, 15);
+    background-color: #ffc107;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
@@ -33,7 +33,7 @@
     color: #333;
     border: none;
     border-radius: 15px;
-    background-color: rgb(244, 15, 15);
+    background-color: #ffc107;
     box-shadow: 0 5px #666;
   }
 
