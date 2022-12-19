@@ -69,4 +69,8 @@ function handler (req: NextApiRequest, res: NextApiResponse) {
     
 }
 
+export async function initCheckArray () {
+    checkedArray = [false]
+}
+
 export default handler
