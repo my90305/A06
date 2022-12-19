@@ -2,21 +2,20 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { updataLevelStatus } from '../../../../../../OuijaBroad/index'
 import { getBoxESP8266 } from '../../../../../../OuijaBroad/index'
 
-
-const CORRECT_LIST = [
-    { id: 0, tagId: '163157131167' },
-    { id: 1, tagId: '677094167' },
-    { id: 2, tagId: '2296120173' }, 
-]
-
 enum CARD_NUM {
     CARD1,
     CARD2,
     CARD3,
     ALL_OF_CARD,
 }
-
+const CORRECT_LIST = [
+    { id: CARD_NUM.CARD1, tagId: '163157131167' },
+    { id: CARD_NUM.CARD2, tagId: '677094167' },
+    { id: CARD_NUM.CARD3, tagId: '2296120173' }, 
+]
 let checkedArray = [false, false, false]
+
+
 const isAllChecked = () => checkedArray.findIndex((item) => item === false) < 0
 
 function getOrder() {
@@ -27,11 +26,7 @@ function getOrder() {
 }
 
 function checkInPut(checkOrder: CARD_NUM, inPut: String) {
-    if(inPut === CORRECT_LIST[checkOrder].tagId) {
-        return true
-    } else {
-        return false
-    }
+    return inPut === CORRECT_LIST[checkOrder].tagId ? true : false
 }
 
 let inPutTagId: String[] = ['--', '--', '--']
@@ -58,8 +53,8 @@ function handler (req: NextApiRequest, res: NextApiResponse) {
             return res.status(200).json({finish: 'finish'})
         } else {
             return res.status(200).json({trueORfalse: result, 
-                            checkedArray, 
-                            isAllChecked: isAllChecked()})
+                                        checkedArray, 
+                                        isAllChecked: isAllChecked()})
         }
     } else if(!result){
         console.log('order:', checkOrder, ',result:', result, ',checkedArray', checkedArray, ',allCorrect:', isAllChecked())
@@ -69,7 +64,7 @@ function handler (req: NextApiRequest, res: NextApiResponse) {
     
 }
 
-export async function initCheckArray () {
+export async function initCheckArray() {
     checkedArray = [false]
 }
 
