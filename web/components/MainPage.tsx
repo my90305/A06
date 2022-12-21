@@ -47,7 +47,8 @@ export default function MainPage() {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 120,
+               minHeight: 450,}}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">標題</InputLabel>
         <Select
@@ -62,6 +63,18 @@ export default function MainPage() {
           </MenuItem>
           <MenuItem value={"1"} {...a11yProps("1")}>
             場地規劃圖
+          </MenuItem>
+          <MenuItem value={"2"} {...a11yProps("2")}>
+            實境密室逃脫遊戲是甚麼
+          </MenuItem>
+          <MenuItem value={"3"} {...a11yProps("3")}>
+            甘特圖
+          </MenuItem>
+          <MenuItem value={"4"} {...a11yProps("4")}>
+            設計流程圖
+          </MenuItem>
+          <MenuItem value={"5"} {...a11yProps("5")}>
+            系統流程圖
           </MenuItem>
         </Select>
       </FormControl>
@@ -98,8 +111,50 @@ export default function MainPage() {
           key={"/Img/SitePlanning.png"}
           src={"/Img/SitePlanning.png"}
           alt={"SitePlanning"}
-          width={"100%"}
-          height={"100%"}
+          width={"50%"}
+          height={"50%"}
+        />
+      </TabPanel>
+      <TabPanel value={value} index={"2"}>
+        <p>
+          真人密室逃脫最初脫胎於一類線上益智類遊戲，玩具需要點擊房間內的物品，找到各個線索之間的聯繫，最終逃出房間。這類小遊戲後來被開發出了線下版本，就是所謂的「實境密室逃脫」了。
+          <br/>
+          <br/>
+          實境遊戲的特色在於「真實」，無論在電視、電腦、電影、甚至幻想中出現的情節，都可以透過實境遊戲的真實呈現，讓參與者感受比以往更身歷其境的體驗，
+          <br/>
+          不僅如此，在實境遊戲的過程中，人與人之間的互動也是真實的，為了達成目標而共同努力的經歷，將會培養出更深厚的革命情感，加深人與人之間的連結。
+          <br/>
+          <br/>
+          實境密室逃脫最早出現在電腦，真人版的密室逃脫遊戲是由美國矽谷有一群工程師創立一間名為Orgin的工作室，
+          <br/>
+          最初在2006年，根據知名推理小說作者阿嘉莎˙克莉絲蒂(Agatha Christie)的作品，設計一系列現實場景，來提供給他們的員工來進行的解謎遊戲。
+        </p>
+      </TabPanel>
+      <TabPanel value={value} index={"3"}>
+      <img
+          key={"/Img/GanttChart.png"}
+          src={"/Img/GanttChart.png"}
+          alt={"GanttChart"}
+          width={"50%"}
+          height={"50%"}
+        />
+      </TabPanel>
+      <TabPanel value={value} index={"4"}>
+      <img
+          key={"/Img/DesignFlowChart.png"}
+          src={"/Img/DesignFlowChart.png"}
+          alt={"DesignFlowChart"}
+          width={"25%"}
+          height={"25%"}
+        />
+      </TabPanel>
+      <TabPanel value={value} index={"5"}>
+      <img
+          key={"/Img/SystemFlowChart.jpg"}
+          src={"/Img/SystemFlowChart.jpg"}
+          alt={"SystemFlowChart"}
+          width={"50%"}
+          height={"50%"}
         />
       </TabPanel>
     </Box>

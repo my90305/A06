@@ -76,35 +76,42 @@ export default function VerticalTabs() {
         <Tab label="資料庫清空" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(4)} />
       </Tabs>
       <TabPanel value={value} index={0} >
-        <Box >
+        <Box sx={{ minWidth: 120,
+               minHeight: 450,}}>
           <h2  className={styles.title}>
             首頁</h2>
           <MainPage/>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1} >
-        <Box >
+        <Box sx={{ minWidth: 120,
+               minHeight: 450,}}>
           <h2 className={styles.title}>
             監控畫面</h2>
           <Camera/>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Box >
+        <Box sx={{ minWidth: 120,
+               minHeight: 450,}}>
           <h2 className={styles.title}>
             電梯控制</h2>
           <ElevatorController/>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Box >
+        <Box sx={{ minWidth: 120,
+               minHeight: 550,
+               maxHeight: 900,}}>
           <h2 className={styles.title}>
             相關連結</h2>
           <ImgLink/>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <Box>
+         <Box sx={{ minWidth: 120,
+               minHeight: 550,
+               maxHeight: 900,}}>
           <h2 className={styles.title}>
             資料庫清空</h2>
           <PrismaClear/>
