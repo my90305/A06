@@ -1,5 +1,6 @@
 import database from 'api/prisma';
-import checkArray from 'api/gossiping';
+import checkGossipingArray from 'api/gossiping';
+import checkOuijbroadArray from 'api/Ouijbroad';
 import styles from './elevatorController.module.css'
 
 export default function PrismaClear() {
@@ -8,7 +9,8 @@ export default function PrismaClear() {
     }
 
     const onResetCheckArrayClick = async () => {
-      await checkArray.init.checkArrayStatus
+      await checkGossipingArray.init.checkArrayStatus
+      await checkOuijbroadArray.init.checkArrayStatus
     }
   
     return (

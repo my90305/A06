@@ -1,7 +1,7 @@
 import init from "./resetCheckArray";
 
-const checkArray = {
+const checkGossipingArray = {
     init,
 }
 
-export default checkArray;
+export default checkGossipingArray;
