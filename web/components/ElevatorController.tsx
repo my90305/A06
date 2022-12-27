@@ -9,7 +9,7 @@ enum VIDEOS_TYPE {
 const screenList = {
   esp32LiveSrc: [
     `http://${process.env.CAMERA_IP}/`,
-    `http://${process.env.CAMERA_IP}/stream`
+    `http://${process.env.CAMERA_IP}:81/stream`
   ]
 }
 

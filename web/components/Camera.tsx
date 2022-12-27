@@ -12,10 +12,10 @@ const screenList = {
   youtubeSrc: [
     "https://www.youtube.com/embed/N4r9tQGmAaY",
     "https://www.youtube.com/embed/aDKadRU3T80"],
-  esp32LiveSrc: [
-    `http://${process.env.CAMERA_IP}/`,
-    `http://${process.env.CAMERA_IP}/stream`
-  ]
+    esp32LiveSrc: [
+      `http://${process.env.CAMERA_IP}/`,
+      `http://${process.env.CAMERA_IP}:81/stream`
+    ]
 }
 
 export default function Camera() {
