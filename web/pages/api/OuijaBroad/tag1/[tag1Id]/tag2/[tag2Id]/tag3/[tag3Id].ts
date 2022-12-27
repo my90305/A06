@@ -9,9 +9,9 @@ enum CARD_NUM {
     ALL_OF_CARD,
 }
 const CORRECT_LIST = [
-    { id: CARD_NUM.CARD1, tagId: '163157131167' },
-    { id: CARD_NUM.CARD2, tagId: '677094167' },
-    { id: CARD_NUM.CARD3, tagId: '2296120173' }, 
+    { id: CARD_NUM.CARD1, tagId: '122233120128' },
+    { id: CARD_NUM.CARD2, tagId: '122233120128' },
+    { id: CARD_NUM.CARD3, tagId: '122233120128' }, 
 ]
 let checkedArray = [false, false, false]
 
@@ -44,7 +44,7 @@ function handler (req: NextApiRequest, res: NextApiResponse) {
     
     checkOrder = getOrder()
     result = checkInPut(checkOrder, inPutTagId[getOrder()])
-    if(result){
+    if(result){ // RFID正確
         checkedArray[checkOrder] = true
         console.log('order:', checkOrder, ',result:', result, ',checkedArray', checkedArray, ',allCorrect:', isAllChecked())
         if (isAllChecked()){
@@ -56,9 +56,9 @@ function handler (req: NextApiRequest, res: NextApiResponse) {
                                         checkedArray, 
                                         isAllChecked: isAllChecked()})
         }
-    } else if(!result){
+    } else if(!result){ // RFID不正確
         console.log('order:', checkOrder, ',result:', result, ',checkedArray', checkedArray, ',allCorrect:', isAllChecked())
-        return res.status(200).json({trueORfalse: result, 
+        return res.status(100).json({trueORfalse: result, 
                                     checkedArray,})
     }
     

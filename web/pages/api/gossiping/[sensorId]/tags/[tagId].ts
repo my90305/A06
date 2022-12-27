@@ -5,7 +5,7 @@ import { updataLevelStatus } from '../../../gossiping/index'
 const CORRECT_LIST = [
   { id: 0, sensorId: '102', tagId: '1086722722' },
   { id: 1, sensorId: '103', tagId: '122233120128' },
-  //{ id: 2, sensorId: '2', tagId: '2296120173' }, 
+  { id: 2, sensorId: '104', tagId: '2296120173' }, 
 ]
 
 let checkedArray = [false, false, false]
