@@ -47,29 +47,20 @@ npm install @mui/material @emotion/react @emotion/styled
 前端UI使用套件
 
 ## 其他連結
-A06 
-https://github.com/A8222838/A06
+A06 https://github.com/A8222838/A06
 
-ESP8266_Framework
-https://github.com/hc0121/ESP8266_Framework
+ESP8266_Framework https://github.com/hc0121/ESP8266_Framework
 
-光遮斷器
-https://github.com/hc0121/Photo_Interrupter
+光遮斷器(Photo_Interrupter) https://github.com/hc0121/Photo_Interrupter
 
-通靈版
-https://github.com/hc0121/Ouija_Board_RFID
+通靈版(Ouija_Board_RFID) https://github.com/hc0121/Ouija_Board_RFID
 
-八卦陣
-https://github.com/hc0121/Gossiping_RFID
+八卦陣(Gossiping_RFID) https://github.com/hc0121/Gossiping_RFID
 
-電梯
-https://github.com/hc0121/Elevator_Door_Control
+電梯(Elevator_Door_Control) https://github.com/hc0121/Elevator_Door_Control
 
-電控鎖
-https://github.com/hc0121/Door_LY-03
+電控鎖(Door_LY-03) https://github.com/hc0121/Door_LY-03
 
-攝影機
-https://github.com/hc0121/CameraWebServer
+攝影機(ESP32-CAM) https://github.com/hc0121/CameraWebServer
 
-測試
-https://github.com/hc0121/A06_Test 
+![](https://github.com/hc0121/A06_Test/blob/a415a5b12334e9f184e3b14a40ecd42b0a6af2e7/%E6%B5%B7%E5%A0%B1.png)
