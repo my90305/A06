@@ -46,7 +46,7 @@ npm install @mui/material @emotion/react @emotion/styled
 ```
 前端UI使用套件
 
-## iot鏈結
+## 其他連結
 A06 
 https://github.com/A8222838/A06
 
