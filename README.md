@@ -32,6 +32,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Genera web
+本地安装的命令：
+```bash
+npm install
+```
+這個命令的結果就是在你命令行的當前目錄下創建一個叫node_modules的文件夾，然後把安裝的代碼放到這個文件夾下面。
+MUI套件：
+```bash
+npm install @mui/material @emotion/react @emotion/styled
+```
+前端UI使用套件
+
 ## iot鏈結
 A06 
 https://github.com/A8222838/A06
