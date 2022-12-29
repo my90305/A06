@@ -34,17 +34,37 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Genera web
-本地安装的命令：
+本地安装的命令(安裝node_modules)：
 ```bash
 npm install
 ```
-這個命令的結果就是在你命令行的當前目錄下創建一個叫node_modules的文件夾，然後把安裝的代碼放到這個文件夾下面。
+本地安装的命令(init TypeScript)：
+initialize a TypeScript project using npm:
+```bash
+npm init -y
+npm install typescript ts-node @types/node --save-dev
+```
+This creates a package.json with an initial setup for your TypeScript app.
 
-MUI套件：
+Now, initialize TypeScript:
+```bash
+npx tsc --init
+```
+
+前端UI使用套件(MUI套件)：
 ```bash
 npm install @mui/material @emotion/react @emotion/styled
 ```
-前端UI使用套件
+
+後端使用的套件(prisma資料庫):
+install the Prisma CLI as a development dependency in the project:
+```bash
+npm install prisma --save-dev
+```
+Finally, set up Prisma with the init command of the Prisma CLI:
+```bash
+npx prisma init --datasource-provider sqlite
+```
 
 ## 其他連結
 A06 https://github.com/A8222838/A06
