@@ -38,11 +38,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ```bash
 npm install
 ```
-<<<<<<< HEAD
-這個命令的結果就是在你命令行的當前目錄下創建一個叫node_modules的文件夾，然後把安裝的代碼放到這個文件夾下面。
-
-MUI套件：
-=======
 本地安装的命令(init TypeScript)：
 initialize a TypeScript project using npm:
 ```bash
@@ -57,7 +52,6 @@ npx tsc --init
 ```
 
 前端UI使用套件(MUI套件)：
->>>>>>> 0c15f765a52edb9a2f630c59f95ddd1eae164b30
 ```bash
 npm install @mui/material @emotion/react @emotion/styled
 ```
