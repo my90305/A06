@@ -34,42 +34,59 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Genera web
-本地安装的命令：
+本地安装的命令(安裝node_modules)：
 ```bash
 npm install
 ```
+<<<<<<< HEAD
 這個命令的結果就是在你命令行的當前目錄下創建一個叫node_modules的文件夾，然後把安裝的代碼放到這個文件夾下面。
 
 MUI套件：
+=======
+本地安装的命令(init TypeScript)：
+initialize a TypeScript project using npm:
+```bash
+npm init -y
+npm install typescript ts-node @types/node --save-dev
+```
+This creates a package.json with an initial setup for your TypeScript app.
+
+Now, initialize TypeScript:
+```bash
+npx tsc --init
+```
+
+前端UI使用套件(MUI套件)：
+>>>>>>> 0c15f765a52edb9a2f630c59f95ddd1eae164b30
 ```bash
 npm install @mui/material @emotion/react @emotion/styled
 ```
-前端UI使用套件
 
-## iot鏈結
-A06 
-https://github.com/A8222838/A06
+後端使用的套件(prisma資料庫):
+install the Prisma CLI as a development dependency in the project:
+```bash
+npm install prisma --save-dev
+```
+Finally, set up Prisma with the init command of the Prisma CLI:
+```bash
+npx prisma init --datasource-provider sqlite
+```
 
-ESP8266_Framework
-https://github.com/hc0121/ESP8266_Framework
+## 其他連結
+A06 https://github.com/A8222838/A06
 
-光遮斷器
-https://github.com/hc0121/Photo_Interrupter
+ESP8266_Framework https://github.com/hc0121/ESP8266_Framework
 
-通靈版
-https://github.com/hc0121/Ouija_Board_RFID
+光遮斷器(Photo_Interrupter) https://github.com/hc0121/Photo_Interrupter
 
-八卦陣
-https://github.com/hc0121/Gossiping_RFID
+通靈版(Ouija_Board_RFID) https://github.com/hc0121/Ouija_Board_RFID
 
-電梯
-https://github.com/hc0121/Elevator_Door_Control
+八卦陣(Gossiping_RFID) https://github.com/hc0121/Gossiping_RFID
 
-電控鎖
-https://github.com/hc0121/Door_LY-03
+電梯(Elevator_Door_Control) https://github.com/hc0121/Elevator_Door_Control
 
-攝影機
-https://github.com/hc0121/CameraWebServer
+電控鎖(Door_LY-03) https://github.com/hc0121/Door_LY-03
 
-測試
-https://github.com/hc0121/A06_Test 
+攝影機(ESP32-CAM) https://github.com/hc0121/CameraWebServer
+
+![](https://github.com/hc0121/A06_Test/blob/a415a5b12334e9f184e3b14a40ecd42b0a6af2e7/%E6%B5%B7%E5%A0%B1.png)
