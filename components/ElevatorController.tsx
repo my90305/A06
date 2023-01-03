@@ -1,6 +1,7 @@
 import iotApi from 'api/iot';
 import { useState } from 'react';
 import styles from './elevatorController.module.css'
+import Box from '@mui/material/Box';
 
 enum VIDEOS_TYPE {
   ESP32_LIVE,
@@ -36,19 +37,17 @@ export default function ElevatorController() {
         <iframe key={src} title={videoType.toString()} width="560" height="315"
           src={src} frameBorder="0" allowFullScreen />)}
       <br />
-
-      <button className={styles.button}
-        onClick={onRealWorldDoorClick}>
-        陽間{isRealWorldDoorOpen ? '開門' : '關門'}
-      </button>
-      <br />
-      <br />
-      
-
-      <button className={styles.button}
-        onClick={onSpiritWorldDoorClick}>
-        陰間{isSpiritWorldDoorOpen ? '開門' : '關門'}
-      </button>
+      <Box justifyContent="center"
+         display="flex">
+        <button className={styles.button}
+          onClick={onRealWorldDoorClick}>
+          陽間{isRealWorldDoorOpen ? '開門' : '關門'}
+        </button>
+        <button className={styles.button}
+          onClick={onSpiritWorldDoorClick}>
+          陰間{isSpiritWorldDoorOpen ? '開門' : '關門'}
+        </button>
+      </Box>
     </div>
   );
 }

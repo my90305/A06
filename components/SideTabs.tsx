@@ -2,7 +2,6 @@ import * as React from 'react';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Camera from './Camera';
 import ElevatorController from './ElevatorController';
 import ImgLink from './ImgLink';
 import MainPage from './MainPage';
@@ -57,63 +56,75 @@ export default function VerticalTabs() {
         bgcolor: 'background.paper',
       }}
     >
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        scrollButtons
-        aria-label="visible arrows tabs example"
-        className={styles.tab}
-        sx={{
-          [`& .${tabsClasses.scrollButtons}`]: {
-            '&.Mui-disabled': { opacity: 0.3 },
-          },
-        }}
-      >
-        <Tab label="首頁" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(0)} />
-        <Tab label="監控畫面" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(1)} />
-        <Tab label="電梯控制" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(2)} />
-        <Tab label="相關連結" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(3)} />
-        <Tab label="資料庫清空" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(4)} />
-      </Tabs>
+      <Box 
+         justifyContent="center"
+         display="flex"
+         width='100%'
+         sx={{ bgcolor: 'rgb(243, 241, 238)'}}>
+        <Tabs
+            value={value}
+            onChange={handleChange}
+            scrollButtons
+            aria-label="visible arrows tabs example"
+            className={styles.tab}
+            sx={{
+              [`& .${tabsClasses.scrollButtons}`]: {
+                '&.Mui-disabled': { opacity: 0.3 },
+              },
+            }}
+        >
+          <Tab label="首頁" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(0)} />
+          <Tab label="電梯控制" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(1)} />
+          <Tab label="相關連結" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(2)} />
+          <Tab label="資料庫清空" sx={{ typography: 'h6' ,fontWeight: 400}} {...a11yProps(3)} />
+        </Tabs>
+      </Box>
+      
       <TabPanel value={value} index={0} >
-        <Box sx={{ minWidth: 120,
-               minHeight: 450,}}>
-          <h2  className={styles.title}>
+        <h2  className={styles.title}>
             首頁</h2>
+        <Box sx={{ minWidth: 900,
+               minHeight: 450,}}
+               alignItems="center"
+               justifyContent="center"
+               display="flex"
+               margin= "auto">
           <MainPage/>
         </Box>
       </TabPanel>
-      <TabPanel value={value} index={1} >
-        <Box sx={{ minWidth: 120,
-               minHeight: 450,}}>
-          <h2 className={styles.title}>
-            監控畫面</h2>
-          <Camera/>
-        </Box>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <Box sx={{ minWidth: 120,
-               minHeight: 450,}}>
-          <h2 className={styles.title}>
+      <TabPanel value={value} index={1}>
+      <h2  className={styles.title}>
             電梯控制</h2>
+        <Box sx={{ minWidth: 900,
+               minHeight: 450,}}
+               alignItems="center"
+               justifyContent="center"
+               display="flex"
+               margin= "auto">
           <ElevatorController/>
         </Box>
       </TabPanel>
-      <TabPanel value={value} index={3}>
-        <Box sx={{ minWidth: 120,
-               minHeight: 550,
-               maxHeight: 900,}}>
-          <h2 className={styles.title}>
+      <TabPanel value={value} index={2}>
+      <h2  className={styles.title}>
             相關連結</h2>
+        <Box sx={{ minWidth: 900,
+               minHeight: 450,}}
+               alignItems="center"
+               justifyContent="center"
+               display="flex"
+               margin= "auto">
           <ImgLink/>
         </Box>
       </TabPanel>
-      <TabPanel value={value} index={4}>
-         <Box sx={{ minWidth: 120,
-               minHeight: 550,
-               maxHeight: 900,}}>
-          <h2 className={styles.title}>
+      <TabPanel value={value} index={3}>
+      <h2  className={styles.title}>
             資料庫清空</h2>
+        <Box sx={{ minWidth: 900,
+               minHeight: 450,}}
+               alignItems="center"
+               justifyContent="center"
+               display="flex"
+               margin= "auto">
           <PrismaClear/>
         </Box>
       </TabPanel>

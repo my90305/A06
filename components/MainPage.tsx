@@ -111,8 +111,8 @@ export default function MainPage() {
           key={"/Img/SitePlanning.png"}
           src={"/Img/SitePlanning.png"}
           alt={"SitePlanning"}
-          width={"50%"}
-          height={"50%"}
+          width={"100%"}
+          height={"100%"}
         />
       </TabPanel>
       <TabPanel value={value} index={"2"}>
@@ -135,8 +135,8 @@ export default function MainPage() {
           key={"/Img/GanttChart.png"}
           src={"/Img/GanttChart.png"}
           alt={"GanttChart"}
-          width={"50%"}
-          height={"50%"}
+          width={"100%"}
+          height={"100%"}
         />
       </TabPanel>
       <TabPanel value={value} index={"4"}>
@@ -144,8 +144,8 @@ export default function MainPage() {
           key={"/Img/DesignFlowChart.png"}
           src={"/Img/DesignFlowChart.png"}
           alt={"DesignFlowChart"}
-          width={"25%"}
-          height={"25%"}
+          width={"100%"}
+          height={"100%"}
         />
       </TabPanel>
       <TabPanel value={value} index={"5"}>
@@ -153,8 +153,8 @@ export default function MainPage() {
           key={"/Img/SystemFlowChart.jpg"}
           src={"/Img/SystemFlowChart.jpg"}
           alt={"SystemFlowChart"}
-          width={"50%"}
-          height={"50%"}
+          width={"100%"}
+          height={"100%"}
         />
       </TabPanel>
     </Box>
