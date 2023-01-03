@@ -47,7 +47,7 @@ export default function MainPage() {
   };
 
   return (
-    <Box sx={{ minWidth: 120,
+    <Box sx={{ minWidth: 600,
                minHeight: 450,}}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">標題</InputLabel>
